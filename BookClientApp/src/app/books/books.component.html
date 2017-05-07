@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="pull-right">
+    <button type="button" class="btn btn-primary navber-btn" (click)="getBooks()">Odśwież</button>
+    <button type="button" class="btn btn-success navbar-btn" (click)="addBook()">Dodaj książkę</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Indeks</th>
+        <th>Tytuł</th>
+        <th>Autorzy</th>
+        <th>Funkcje</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.authors}}</td>
+        <td>
+          <button type="button" class="btn btn-success show-modal" (click)="editBook(book)">Edytuj</button>
+          <button class="btn btn-danger" (click)="deleteBook(book.id)">Usuń</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

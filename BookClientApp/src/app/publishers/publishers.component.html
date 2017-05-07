@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="pull-right">
+    <button type="button" class="btn btn-primary navber-btn" (click)="getPublishers()">Odśwież</button>
+    <button type="button" class="btn btn-success navbar-btn" (click)="addPublisher()">Dodaj wydawnictwo</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nazwa</th>
+        <th>Funkcje</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pub of publishers">
+        <td>{{pub.id}}</td>
+        <td>{{pub.name}}</td>
+        <td>
+          <button type="button" class="btn btn-success show-modal" (click)="editPublisher(pub)">Edytuj</button>
+          <button class="btn btn-danger" (click)="deletePublisher(pub.id)">Usuń</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

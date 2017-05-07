@@ -1,0 +1,42 @@
+<div class="container" *ngIf="book">
+  <h1>Książka</h1> <br />
+  <form #addForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Indeks*</label>
+      <input type="text" class="form-control" name="id" [(ngModel)]="book.id" required>
+    </div>
+    <div class="form-group">
+      <label>Tytuł*</label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="book.title" required>
+    </div>
+    <div class="form-group">
+      <label>Autorzy</label>
+      <input type="text" class="form-control" name="authors" [(ngModel)]="book.authors">
+    </div>
+    <div class="form-group">
+      <label>Wydawnictwo</label>
+      <select class="form-control"
+        name="publisher_id" [(ngModel)]="book.publisher_id">
+        <option *ngFor="let pub of publishers" [value]="pub.id" [attr.selected]="pub.id==book.publisher_id ? 'selected' : ''">{{pub.name}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Ilość stron*</label>
+      <input class="form-control" type="number" name="ilosc_stron" [(ngModel)]="book.ilosc_stron" required>
+    </div>
+    <div class="form-group">
+      <label>Data wydania*</label>
+      <input class="form-control" type="date" name="data_wydania" [(ngModel)]="book.data_wydania" required>
+      <span class="help-block">*Pole wymagane</span>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-sm-1">
+        <button type="submit" name="button" class="btn btn-success" [disabled]="submited || !addForm.form.valid">Zapisz</button>
+      </div>
+      <div class="col-sm-1">
+        <button type="button" name="button" class="btn btn-danger" (click)="discard()">Anuluj</button>
+      </div>
+    </div>
+  </form>
+</div>

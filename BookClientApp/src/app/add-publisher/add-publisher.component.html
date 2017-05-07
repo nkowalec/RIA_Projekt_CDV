@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Wydawnictwo</h1><br />
+  <form #addForm="ngForm" *ngIf="publisher" method="post" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Nazwa*</label>
+      <input type="text" class="form-control" [(ngModel)]="publisher.name" name="name" required>
+      <span class="help-block">Pole wymagane*</span>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-sm-1">
+        <button type="submit" name="button" class="btn btn-success" [disabled]="submited || !addForm.form.valid">Zapisz</button>
+      </div>
+      <div class="col-sm-1">
+        <button type="button" name="button" class="btn btn-danger" (click)="discard()">Anuluj</button>
+      </div>
+    </div>
+  </form>
+</div>

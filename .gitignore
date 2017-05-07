@@ -1,5 +1,15 @@
-vendor/
-node_modules/
+laravel_demo/node_modules
+laravel_demo/public/hot
+laravel_demo/public/storage
+laravel_demo/storage/*.key
+laravel_demo/vendor
+laravel_demo/.idea
+laravel_demo/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+.env
+
 
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -65,3 +75,47 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# ----------------------------------------
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+BookClientApp/dist
+BookClientApp/tmp
+BookClientApp/out-tsc
+
+# dependencies
+BookClientApp/node_modules
+
+# IDEs and editors
+BookClientApp/.idea
+BookClientApp/.project
+BookClientApp/.classpath
+BookClientApp/.c9/
+BookClientApp/*.launch
+BookClientApp/.settings/
+BookClientApp/*.sublime-workspace
+
+# IDE - VSCode
+BookClientApp/.vscode/*
+BookClientApp/!.vscode/settings.json
+BookClientApp/!.vscode/tasks.json
+BookClientApp/!.vscode/launch.json
+BookClientApp/!.vscode/extensions.json
+
+# misc
+BookClientApp/.sass-cache
+BookClientApp/connect.lock
+BookClientApp/coverage
+BookClientApp/libpeerconnection.log
+BookClientApp/npm-debug.log
+BookClientApp/testem.log
+BookClientApp/typings
+
+# e2e
+BookClientApp/e2e/*.js
+BookClientApp/e2e/*.map
+
+# System Files
+BookClientApp/.DS_Store
+BookClientApp/Thumbs.db
